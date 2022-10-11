@@ -1,10 +1,22 @@
 {
   "name": "root",
   "private": true,
+  "version": "1.0.0",
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
     "lerna": "^5.6.1"
+  },
+  "scripts": {
+    "start": "lerna run start",
+    "start-web": "lerna run start --scope=web",
+    "start-api-server": "lerna run start --scope=api-server",
+
+
+    "test": "lerna run test",
+    "dev": "lerna run dev",
+    "diff": "lerna diff"
   }
+
 }
