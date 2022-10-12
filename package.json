@@ -10,13 +10,12 @@
   },
   "scripts": {
     "start": "lerna run start",
-    "start-web": "lerna run start --scope=web",
-    "start-api-server": "lerna run start --scope=api-server",
-
-
+    "web": "lerna run start --scope=web",
+    "api-server": "lerna run start --scope=api-server",
+    "ios": "lerna run ios --scope=mobile",
+    "android": "lerna run android --scope=mobile",
     "test": "lerna run test",
     "dev": "lerna run dev",
     "diff": "lerna diff"
   }
-
 }

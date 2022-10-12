@@ -6,12 +6,11 @@
  */
 
 const path = require('path');
-const watchFolders = [
-  //Relative path to packages directory
-  path.resolve(__dirname + '/..'),
-];
+
 
 module.exports = {
+  watchFolders: [path.resolve(__dirname, '../../')],
+
   transformer: {
     getTransformOptions: async () => ({
       transform: {
