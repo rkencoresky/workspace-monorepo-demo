@@ -1,8 +1,8 @@
 const express = require("express")
-const port = 5000
+const port = process.env.API_SERVER_PORT
 const app = express();
 
-app.listen("/", (req, res) => {
+app.get("/", (req, res) => {
     res.send("I am a api server")
 })
 
