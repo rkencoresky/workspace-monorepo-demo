@@ -12,10 +12,11 @@
     "start": "lerna run start",
     "web": "lerna run start --scope=web",
     "api-server": "lerna run start --scope=api-server",
-    "ios": "lerna run ios --scope=mobile",
-    "android": "lerna run android --scope=mobile",
+    "ios": "lerna run ios --scope=mobileapp",
+    "android": "lerna run android --scope=mobileapp",
     "test": "lerna run test",
     "dev": "lerna run dev",
     "diff": "lerna diff"
-  }
+  },
+  "dependencies": {}
 }
