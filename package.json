@@ -1,22 +1,53 @@
 {
-  "name": "root",
+  "name": "react-native-universal-project",
+  "version": "0.0.1",
   "private": true,
-  "version": "1.0.0",
-  "workspaces": [
-    "packages/*"
-  ],
-  "devDependencies": {
-    "lerna": "^5.6.1"
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@react-native-async-storage/async-storage",
+      "**/react",
+      "**/react-dom",
+      "**/react-native",
+      "**/react-native/**",
+      "**/react-native-codegen",
+      "**/react-native-dev-menu",
+      "**/react-native-macos",
+      "**/react-native-windows"
+    ]
   },
   "scripts": {
-    "start": "lerna run start",
-    "web": "lerna run start --scope=web",
-    "api-server": "lerna run start --scope=api-server",
-    "ios": "lerna run ios --scope=mobileapp",
-    "android": "lerna run android --scope=mobileapp",
-    "test": "lerna run test",
-    "dev": "lerna run dev",
-    "diff": "lerna diff"
+    "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock",
+    "android:metro": "yarn workspace @my-app/mobile start",
+    "android:start": "yarn workspace @my-app/mobile android",
+    "android:studio": "yarn workspace @my-app/mobile studio",
+    "ios:metro": "yarn workspace @my-app/mobile start",
+    "ios:start": "yarn workspace @my-app/mobile ios",
+    "ios:xcode": "yarn workspace @my-app/mobile xcode",
+    "ios:pods": "yarn workspace @my-app/mobile pods",
+    "web:start": "yarn workspace @my-app/web start",
+    "web:build": "yarn workspace @my-app/web build",
+    "next:start": "yarn workspace @my-app/next dev",
+    "next:build": "yarn workspace @my-app/next build",
+    "next:serve": "yarn workspace @my-app/next start",
+    "server:start": "yarn workspace @my-app/server start",
+    "server:dev": "yarn workspace @my-app/server dev",
+    "lint": "ultra -r lint",
+    "lint:fix": "ultra -r lint:fix",
+    "test": "ultra -r test",
+    "typecheck": "ultra -r typecheck"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react-app": "^6.2.2",
+    "eslint-plugin-react-native": "^3.11.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.4.2",
+    "ultra-runner": "^3.10.5"
+  }
 }
